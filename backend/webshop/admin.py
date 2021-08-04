@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import webshop
+from .models import product
 
 class webshopAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'completed')
+    list_display = ('title', 'description', 'price', 'image')
 # Register your models here.
-admin.site.register(webshop, webshopAdmin)
+admin.site.register(product, webshopAdmin)
