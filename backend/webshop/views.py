@@ -1,7 +1,7 @@
 
 
 # Create your views here.
-from django.shortcuts import render
+# from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import webshopSerializer
 from .models import product
@@ -11,3 +11,8 @@ from .models import product
 class webshopView(viewsets.ModelViewSet):
     serializer_class = webshopSerializer
     queryset = product.objects.all()
+
+
+
+# def register(response):
+#     return render()

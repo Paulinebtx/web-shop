@@ -16,12 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from webshop import views
+from webshop import views as webshop_views
+from authenticationuser import views as customer_views
+# from authenticationuser.views import signupView
+
+
 
 router = routers.DefaultRouter()
-router.register(r'webshops', views.webshopView, 'webshop')
+router.register(r'webshops', webshop_views.webshopView, 'webshop')
+router.register(r'customer', customer_views.CustomerView, 'customer')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+   
     path('api/', include(router.urls)),
+  
 ]
+
