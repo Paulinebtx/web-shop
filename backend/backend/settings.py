@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +26,8 @@ SECRET_KEY = 'django-insecure-$1akvwm_f2^_+d!hs903h8glj17*u_94df26kw5s@l1uq(xsk-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['web-shop-johnsons.herokuapp.com']
 
 # Application definition
 
@@ -84,13 +85,25 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'webshopdb',
+#        'USER': 'cosmina', 
+#        'PASSWORD': '123456', 
+#        'HOST': 'localhost',
+#        'PORT': '5432',
+#    }
+   
+# }
+
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'webshopdb',
-       'USER': 'cosmina', 
-       'PASSWORD': '123456', 
-       'HOST': 'localhost',
+       'NAME': 'da7692ddimtf4l',
+       'USER': 'rnkbqqersijqkq', 
+       'PASSWORD': 'e623337ebd78cdb7089f789f8ed8ac400c885a857b66157cbd2ccd7288f043fc', 
+       'HOST': 'ec2-54-74-95-84.eu-west-1.compute.amazonaws.com',
        'PORT': '5432',
    }
    
@@ -131,7 +144,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+django_heroku.setting(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
