@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
+import django_heroku
 
 from pathlib import Path
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-$1akvwm_f2^_+d!hs903h8glj17*u_94df26kw5s@l1uq(xsk-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['webshop-johnsons.herokuapp.com']
 
 
 # Application definition
@@ -84,17 +86,29 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'webshopdb',
+#        'USER': 'pauline', 
+#        'PASSWORD': '123456', 
+#        'HOST': 'localhost',
+#        'PORT': '5432',
+#    }
+   
+# }
 DATABASES = {
    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'webshopdb',
-       'USER': 'pauline', 
-       'PASSWORD': '123456', 
-       'HOST': 'localhost',
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'daj9m1q3ah8scq',
+       'USER': 'fwxyasqywcrrhr', 
+       'PASSWORD': '756027404dd2959c98df4c47820920016b4005dbf74a1eaa05d8c9fe6945eda1', 
+       'HOST': 'ec2-52-209-171-51.eu-west-1.compute.amazonaws.com',
        'PORT': '5432',
    }
    
 }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -131,7 +145,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+django_heroku.setting(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
