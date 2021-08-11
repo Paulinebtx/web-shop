@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'webshop',
     'authenticationuser',
-    'django_heroku',
-    'backend',
     'whitenoise.runserver_nostatic',
 ]
 
