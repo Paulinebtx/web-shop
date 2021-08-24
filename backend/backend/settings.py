@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'webshop',
     'authenticationuser',
     'whitenoise.runserver_nostatic',
+    'basket',
+
 ]
 
 MIDDLEWARE = [
