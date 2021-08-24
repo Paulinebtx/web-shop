@@ -15,20 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
+from rest_framework import routers, viewsets
 from webshop import views as webshop_views
 from authenticationuser import views as customer_views
 # from authenticationuser.views import signupView
-
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 
 router = routers.DefaultRouter()
 router.register(r'webshops', webshop_views.webshopView, 'webshop')
-router.register(r'customer', customer_views.CustomerView, 'customer')
+router.register(r'customers', customer_views.CustomerView, 'customer')
+# router.register(r'register', customer_views.UserCreate.as_view(), 'register')
+# router.register(r'customer', customer_views.CustomerView, 'customer')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   
     path('api/', include(router.urls)),
-  
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/user/register', customer_views.UserCreate.as_view()),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
