@@ -1,11 +1,11 @@
 from django.db import models
 from django.urls import reverse
 from webshop.models import Product
-from authenticationuser.models import Customer
+from authenticationuser.models import User
 
 # Create your models here.
 class basket(models.Model):
-    customer = models.ForeignKey(Customer, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
 
     # date_order = models.DateTimeField(auto_now_add=True)
     # complete = models.BooleanField(default=False)
