@@ -10,6 +10,7 @@ import os
 import dj_database_url
 from pathlib import Path
 from datetime import timedelta
+# from basket.views import BasketView
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -91,7 +92,7 @@ DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'webshopdb',
-       'USER': 'cosmina', 
+       'USER': 'pauline', 
        'PASSWORD': '123456', 
        'HOST': 'localhost',
        'PORT': '5432',
@@ -206,4 +207,4 @@ REST_FRAMEWORK = {
     )
 }
 
-# LOGIN_REDIRECT_URL = "home"
+# LOGIN_REDIRECT_URL = "basket"
