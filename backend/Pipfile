@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pillow = "*"
+django-cors-headers = "*"
+djangorestframework-simplejwt = "*"
 asgiref = "==3.4.1"
 dj-database-url = "==0.5.0"
 django-cors-headers = "==3.7.0"
@@ -16,6 +19,7 @@ sqlparse = "==0.4.1"
 whitenoise = "==5.3.0"
 Django = "==3.2.6"
 Pillow = "==8.3.1"
+
 
 [dev-packages]
 
