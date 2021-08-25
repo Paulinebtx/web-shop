@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from webshop.models import Product
+from webshop.models import product
 from authenticationuser.models import Customer
 
 # Create your models here.
