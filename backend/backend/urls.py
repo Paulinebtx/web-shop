@@ -18,6 +18,8 @@ from django.urls import path, include
 from rest_framework import routers, viewsets
 from webshop import views as webshop_views
 from authenticationuser import views as customer_views
+from basket import views as basket_views
+from basket import views as basket_elem_views
 # from authenticationuser.views import signupView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -27,9 +29,14 @@ from rest_framework_simplejwt.views import (
 
 router = routers.DefaultRouter()
 router.register(r'webshops', webshop_views.webshopView, 'webshop')
+
 router.register(r'customers', customer_views.CustomerView, 'customer')
 # router.register(r'register', customer_views.UserCreate.as_view(), 'register')
 # router.register(r'customer', customer_views.CustomerView, 'customer')
+router.register(r'customer', customer_views.CustomerView, 'customer')
+router.register(r'baskets', basket_views.BasketView, 'basket')
+router.register(r'basketItems', basket_elem_views.Basket_elemView, 'basketItem')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

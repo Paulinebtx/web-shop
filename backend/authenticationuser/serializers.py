@@ -7,6 +7,7 @@ class CustomerSerializer(serializers.ModelSerializer):
         model = Customer
         fields = "__all__"
 
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -51,3 +52,5 @@ class UserSerializer(serializers.ModelSerializer):
 #             instance.set_password(password)
 #         instance.save()
 #         return instance
+
+
