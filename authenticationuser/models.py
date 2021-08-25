@@ -1,7 +1,7 @@
 # Create your models here.
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 # Create your models here.
 class Customer(models.Model):
