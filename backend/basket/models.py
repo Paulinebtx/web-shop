@@ -5,7 +5,7 @@ from authenticationuser.models import Customer
 
 # Create your models here.
 class basket(models.Model):
-    Customer = models.ForeignKey(Customer, null=True, blank=True, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customer, null=True, blank=True, on_delete=models.CASCADE)
 
     # date_order = models.DateTimeField(auto_now_add=True)
     # complete = models.BooleanField(default=False)
