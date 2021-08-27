@@ -7,7 +7,7 @@ class Product(models.Model):
     title = models.CharField(max_length=120)
     description = models.TextField()
     price = models.FloatField()
-    image = models.ImageField()
+    image = models.ImageField(blank=True)
 
     # delete a product by say if it's active or not
     # is_active = models.BooleanField(default=True)
