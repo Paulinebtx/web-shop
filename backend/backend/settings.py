@@ -81,7 +81,7 @@ DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'webshopdb',
-       'USER': 'cosmina', 
+       'USER': 'pauline', 
        'PASSWORD': '123456', 
        'HOST': 'localhost',
        'PORT': '5432',
