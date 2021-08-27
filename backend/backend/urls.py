@@ -20,6 +20,7 @@ from webshop import views as webshop_views
 from authenticationuser import views as customer_views
 from basket import views as basket_views
 from basket import views as basket_elem_views
+from demo.views import user,login_view
 # from authenticationuser.views import signupView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -45,5 +46,8 @@ urlpatterns = [
     path('api/user/register', customer_views.UserCreate.as_view()),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('user', user, name='user'),
+    path('login',login_view,name='login'),
     # path('api/baskets/', basket_views.BasketView, name='baskets'),
 ]
+

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'rest_framework_simplejwt.token_blacklist',
     'basket',
+    'demo',
 ]
 
 MIDDLEWARE = [
@@ -187,12 +188,21 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 REST_FRAMEWORK = {
+    #  'DEFAULT_AUTHENTICATION_CLASSES': (
+    #  'demo.verify.JWTAuthentication',
+    # ),    
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    # 'rest_framework.permissions.IsAuthenticated',
+    # )
+
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+    
 }
 
+CORS_ALLOW_CREDENTIALS = True 
 # LOGIN_REDIRECT_URL = "basket"
