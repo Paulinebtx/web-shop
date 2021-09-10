@@ -1,6 +1,2 @@
-###Products:
-'''
-POST:
-GET:
-DELETE:
-PUT:
+## E-commerce Back-end set-up 
+co-working project 
