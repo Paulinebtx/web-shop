@@ -1,2 +1,2 @@
-## E-commerce Back-end set-up 
+## E-commerce (back-end)
 co-working project 
